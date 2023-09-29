@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    <script>
+        function display(){
+            return "<h2>this is function display</h2>"
+        }
+        let nums=[1,2,3,4,5,"KIET",new Date(),display()]
+        nums[4]="9090";
+        var values=new Array(12,13,14,15,16)
+        values[4]=1000;
+        document.write(nums)
+        document.write("<br>"+values)
+        const constvalues=[100,300,400,500]
+        document.write("<br>")
+        constvalues[0]=200
+        constvalues.pop()
+        constvalues.push(700)
+        
+        document.write(constvalues);
+    </script>
+</body>
+</html>

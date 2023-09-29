@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <script>
+        function dispalyDate(obj)
+        { if(obj)
+            {
+                obj.innerHTML=new Date();
+            }
+            else{
+                document.getElementById('date').innerHTML=Date();}
+        }
+        function dispalyDate2(){
+            document.getElementById('date2').innerHTML=new Date();
+        }
+    </script>
+</head>
+<body>
+    <button onClick="dispalyDate();">Show Date</button>
+    <p id="date"></p>
+    <button onmouseover="dispalyDate2();">Show date again</button>
+    <p id="date2"></p>
+    <!--Information about information- meta information -->
+    <h2 onmouseover="dispalyDate(this)">This is h2</h2>
+</body>
+</html>

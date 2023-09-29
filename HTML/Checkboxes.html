@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selection Page</title>
+</head>
+<body>
+    <h2>Selection Text</h2>
+    <form action="http://www.kiet.edu/userinput.php" method="post" enctype="multipart/form-data">
+        <input type="text" name="name" id= "id" placeholder="Enter name" />
+        <br/>
+
+        <label>Select your Language </label> <br/>
+        <!--Name of the checkboxes must be different otherwise they willl work as radio buttons-->
+        <input type="checkbox" name="java" id="java" /> JAVA <br/>
+        <input type="checkbox" name="python" id="python" /> Python <br/>
+        <input type="checkbox" name="jsp" id="jsp" /> JSP <br/>
+        <input type="checkbox" name="c" id="c" /> C <br/>
+
+        <label>Select your Gender </label> <br/>
+        <!--Name of the radio buttons should be same otherwise they will work as checkboxes-->
+        <input type="radio" name="gender" id="gender" /> Male <br/>
+        <input type="radio" name="gender" id="gender" /> Female <br/>
+
+        <label>Select your choice</label> <br/>
+        <select>
+            <option value="java">JAVA</option>
+            <option value="python">Python</option>
+            <option value="Kotlin" selected>Kotlin</option>
+            <option value="React">React</option>
+        </select>        
+        <br/>
+        <label>Select your choice</label> <br/>
+        <select>
+            <option value="null" selected>Select your choice</option>
+            <option value="java">JAVA</option>
+            <option value="python">Python</option>
+            <option value="Kotlin">Kotlin</option>
+            <option value="React">React</option>
+        </select>        <br/>
+
+        <label>Select your choice</label> <br/>
+        <select multiple="1">
+            <option value="null" selected>Select your choice</option>
+            <option value="java">JAVA</option>
+            <option value="python">Python</option>
+            <option value="Kotlin">Kotlin</option>
+            <option value="React">React</option>
+        </select>     
+        <br/>
+        <input type="submit" value="SEND" name="submit" id="submit"/>
+        <input type="reset" value="RESET" name="reset" id="reset" />
+        <br/>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
