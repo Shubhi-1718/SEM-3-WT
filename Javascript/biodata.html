@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <tilte>Registration form</tilte>
+    <style>
+        #container{
+            border: 1px solid blue;
+            margin: 30px auto;
+            width: 250px;
+        }
+        #reg{
+            text-align: center;
+            margin: auto;
+        }
+        .tagborder{
+            margin: 5px;
+            background-color: antiquewhite;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        #nameErr,#mailErr,#mobileErr,#qualiErr,#ageErr{
+             color:red}
+     </style>
+</head>
+<body onchange="checkValue()">
+    <div id="container">
+        <p id="reg"><b>Registration</b></p>
+        <form name="regform" method="get" onsubmit="return checkValue()">
+        <div class=" tagborder">
+            <label>Enter your name </label><br>
+            <input type="text" name="name" size="22%"/><br>
+            <div id="nameErr"></div>
+        </div>
+        <div class="tagborder">
+            <label>Enter your email</label><br>
+            <input type="email" name="mail" sixe="22%"><br>
+            <div id="mailErr"></div>
+        </div>
+        <div class="tagborder">
+            <label>Enter your mobile number</label><br>
+            <input type="text" name="mobile" sixe="22%"><br>
+            <div id="mobileErr"></div>
+        </div>
+        <div class="tagborder">
+            <label>Enter your age</label><br>
+            <input type="number" name="age" sixe="22%"><br>
+            <div id="ageErr"></div>
+        </div>
+        <div class="tagborder">
+            <label>Enter your Qualification</label><br>
+            <select name="quali">
+                <option value="Select">Select your Qualification</option>
+                <option value="PHD">PHD/option>
+                <option value="Masters">Masters</option>
+                <option value="grad">Graduate</option>
+                <option value="inter">Intermediate</option>
+
+            </select>
+            <div id="qualiErr"></div>
+            
+        </div>
+        <div class="tagborder">
+            <input type="submit" value="Send"/>
+        </div>
+        </form>
+        <script>
+            function printError(errorId, errorValue){
+                document.getElementById(errorId).innerHTML=errorValue;
+            }
+            function checkValue(){
+                var nameErr=mailErr=mobileErr=ageError=qualiErr=true;
+                var name=document.regform.name.value;
+                var mail=document.regform.mail.value;
+                var mobile=document.regform.mobile.value;
+                var age=document.regform.age.value;
+                var quali=document.regform.quali.value;
+
+                if (quali==="Select"){
+                    printError("qualiErr","*Please Enter your qualification")
+                }
+                else{
+                    printError("qualiErr","")
+                    qualiErr=false;
+                }
+
+                if(mobile===""){
+                    printError(mobileErr,"*Please Enter your mobile number")
+                }
+                else{
+                    var regex=/^[6-9]\d{9}$/
+                    if (regex.test(mobile)===false){
+                    printError("mobileErr","*Please enter valid mobile")
+                    } else {
+                    printError("mobileErr","")
+                   mobileErr=false
+                }
+            }
+
+                if(mail===""){
+                    printError("mailErr","*Please enter your mail");}
+                else{
+                    var regex=/^\S+@\S+\.\S+$/
+                    if(regex.test(mail)===false){
+                        printError("mailErr","*Please enter valid mail")
+                    }
+                    else{
+                        printError("mailErr","")
+                        mailErr=false;
+                    }
+                 }
+                 
+                 if (name===""){
+                    printError("mailErr","*Please enter your name");}
+                else
+                {
+                    var regex=/^[a-zA-z\s]/;
+                    if(regex.test(name)===false){
+                        printError("nameErr","*Please enter valid name");
+                    }
+                    else{
+                        printError("nameErr","")
+                        nameErr=false;
+                    }
+                }
+                 if(age==="")
+                 {
+                    printErr("ageErr","*Please enter ypur age")
+        
+                 }
+                 else
+                 {
+                    var regex =/^\d{2}+$/
+                    if (regex.test(age)===false || age<18 || age>65){
+                        printError("ageErr","*Please enter valid age")
+                    }
+                    else{
+                        printError("ageErr","")
+                        nameErr=false;
+                    }
+                 }
+                 if((nameErr||ageErr||mailErr||qualiErr||mobileErr)===true)
+                 return false;
+                else
+                {
+                    var data;
+                    data ="You enter name="+name+"\n";
+                    data+="You enter email="+mail+"\n";
+                    data+="You enter mobile="+mobile+"\n";
+                    data+="Your age="+age+"\n";
+                    data+="Your qualification is="+quali+"\n";
+                    alert(data);
+                    return true
+                }
+                 
+        }
+
+        </script>
+    </div>
+
+
+
+</body>
+</html>
